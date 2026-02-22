@@ -988,7 +988,7 @@ document.addEventListener("keydown", (e) => {
       const currentTheme = document.documentElement.getAttribute('data-theme');
       if (currentTheme === 'strangerthings' && bgMusic) {
         alert("🎶 Now entering the Upside Down... 🎶");
-        bgMusic.src = 'assets/music/theme-kate.mp3';
+        bgMusic.src = 'assets/music/Kate_Bush__Running_Up_That_Hill__12___.mp3';
         bgMusic.play().catch(e => console.error("Audio play failed:", e));
       }
     }
