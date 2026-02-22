@@ -994,6 +994,18 @@ document.addEventListener("keydown", (e) => {
     }
     if (cheatCodeBuffer.endsWith("lumos")) {
       document.body.classList.toggle("flashlight-mode");
+      
+      // Light switch sound effect
+      const ctx = new (window.AudioContext || window.webkitAudioContext)();
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'square';
+      osc.frequency.setValueAtTime(150, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(40, ctx.currentTime + 0.05);
+      gain.gain.setValueAtTime(0.1, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.05);
+      osc.connect(gain); gain.connect(ctx.destination);
+      osc.start(); osc.stop(ctx.currentTime + 0.05);
     }
     if (cheatCodeBuffer.endsWith("snap")) {
       const elements = Array.from(document.querySelectorAll("p, h1, h2, h3, img, .btn, .project-card, .blog-card, .cert-card, .timeline-item"));

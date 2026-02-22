@@ -1181,7 +1181,7 @@ body.idle #scrollTopBtn {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: radial-gradient(circle 250px at var(--cursor-x, 50%) var(--cursor-y, 50%), transparent 0%, rgba(0, 0, 0, 0.98) 100%);
+  background: radial-gradient(circle 300px at var(--cursor-x, 50%) var(--cursor-y, 50%), transparent 10%, rgba(0, 0, 0, 0.99) 100%);
   pointer-events: none;
 }
 
